@@ -101,7 +101,9 @@
 
 -(CGSize)sizeThatFits:(CGSize)size
 {
-    return [_internalTextView sizeThatFits:size];
+    CGSize fitSize = [_internalTextView sizeThatFits: size];
+    fitSize.height = MIN(_maxHeight, MAX(_minHeight, fitSize.height));
+    return fitSize;
 }
 
 -(void)sizeToFit
