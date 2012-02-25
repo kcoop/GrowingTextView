@@ -99,6 +99,11 @@
     [self setMaxNumberOfLines:3];
 }
 
+-(CGSize)sizeThatFits:(CGSize)size
+{
+    return [_internalTextView sizeThatFits:size];
+}
+
 -(void)sizeToFit
 {
 	CGRect r = self.frame;
